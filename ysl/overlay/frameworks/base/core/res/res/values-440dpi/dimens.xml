@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="big_media_notification_content_padding">16.72998dip</dimen>
+    <dimen name="media_notification_app_name_margin_bottom">3.6399841dip</dimen>
+    <dimen name="media_notification_content_margin_start">16.0dip</dimen>
+    <dimen name="media_notification_content_vertical_margin">16.72998dip</dimen>
+    <dimen name="media_notification_icon_margin_end">13.089996dip</dimen>
+    <dimen name="media_notification_icon_size">63.26999dip</dimen>
+</resources>
