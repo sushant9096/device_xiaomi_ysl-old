@@ -20,7 +20,11 @@
 <!-- These resources are around just to allow their values to be customized
      for different hardware and product builds. -->
 <resources>
-    <!-- more realistic padding -->
-    <dimen name="rounded_corner_content_padding">12dp</dimen>
+
+    <!-- Enable doze mode-->
+    <bool name="doze_display_state_supported">true</bool>
+    <!-- Rounded display corners-->
+    <dimen name="rounded_corner_radius">8dp</dimen>
+
 </resources>
 
