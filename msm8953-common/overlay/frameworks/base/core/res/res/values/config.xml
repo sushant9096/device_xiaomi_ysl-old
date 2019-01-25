@@ -95,6 +95,7 @@
         <item>200</item>
         <item>240</item>
         <item>255</item>
+	</integer-array>
 
     <!-- Minimum screen brightness setting allowed by the power manager.
          The user is forbidden from setting the brightness below this level. -->
