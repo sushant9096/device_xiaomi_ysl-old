@@ -36,7 +36,7 @@
 #include <utils/List.h>
 
 //Media depedancies
-#include "OMX_QCOMExtns.h"
+#include "../../../../../../hardware/qcom/media/msm8996/mm-core/inc/OMX_QCOMExtns.h"
 
 // Display dependencies
 #include "qdMetaData.h"

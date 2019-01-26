@@ -32,7 +32,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.*/
 extern "C" {
 #endif
 
-#include <OMX_Image.h>
+#include "../../../../../../frameworks/native/headers/media_plugin/media/openmax/OMX_Image.h"
 #include <qexif.h>
 
 /** qomx_image_eventd
