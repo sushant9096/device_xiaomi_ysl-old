@@ -72,10 +72,22 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
 
 # ANT
+#PRODUCT_PACKAGES += \
+ #   AntHalService \
+#    com.dsi.ant.antradio_library \
+    libantradio
+
+# ANT+
+PRODUCT_COPY_FILES += \
+    external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:system/etc/permissions/com.dsi.ant.antradio_library.xml
+
 PRODUCT_PACKAGES += \
     AntHalService \
-    com.dsi.ant.antradio_library \
-    libantradio
+    com.dsi.ant.antradio_library
+
+# IMS
+PRODUCT_PACKAGES += \
+    ims-ext-common
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -311,15 +323,26 @@ PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
 
 # RIL
+#PRODUCT_PACKAGES += \
+ #   librmnetctl \
+  #  libcnefeatureconfig \
+ #   libxml2 \
+   # telephony-ext \
+  3  ims-ext-common
+
+#PRODUCT_BOOT_JARS += \
+ #   telephony-ext
+
+# Telephony
 PRODUCT_PACKAGES += \
-    librmnetctl \
-    libcnefeatureconfig \
-    libxml2 \
-    telephony-ext \
-    ims-ext-common
+    telephony-ext
 
 PRODUCT_BOOT_JARS += \
     telephony-ext
+
+# QTI
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/permissions/privapp-permissions-qti.xml:system/etc/permissions/privapp-permissions-qti.xml
 
 # Seccomp policy
 PRODUCT_COPY_FILES += \
