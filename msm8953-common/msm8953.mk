@@ -29,11 +29,11 @@ PRODUCT_ENFORCE_RRO_TARGETS := \
 
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG := xhdpi
+PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Boot animation
-TARGET_SCREEN_HEIGHT := 1440
-TARGET_SCREEN_WIDTH := 720
+TARGET_SCREEN_HEIGHT := 2280
+TARGET_SCREEN_WIDTH := 1080
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -284,27 +284,15 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fstab.qcom \
     init.qcom.rc \
-    init.class_main.sh \
     init.qcom.sh \
-    init.qcom.sensors.sh \
     init.qcom.usb.rc \
-    init.msm.usb.configfs.rc \
     init.target.rc \
-    init.crda.sh \
-    init.mdm.sh \
-    init.qcom.class_core.sh \
-    init.qcom.coex.sh \
-    init.qcom.crashdata.sh \
-    init.qcom.early_boot.sh \
-    init.qcom.efs.sync.sh \
-    init.qcom.sdio.sh \
-    init.qcom.syspart_fixup.sh \
-    init.qcom.usb.sh \
-    init.qcom.wifi.sh \
-    init.qti.fm.sh \
-    init.qti.ims.sh \
-    init.goodix.sh \
-    ueventd.rc
+    ueventd.qcom.rc
+
+PRODUCT_PACKAGES += \
+    init.qcom.bt.sh \
+    init.baseband.sh \
+    init.qcom.post_boot.sh
 
 # RenderScript HAL
 PRODUCT_PACKAGES += \

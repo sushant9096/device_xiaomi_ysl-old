@@ -38,30 +38,17 @@
          backlight values for LUX levels between these control points.
          Must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLevels">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>8</item>
-        <item>13</item>
-        <item>17</item>
-        <item>21</item>
-        <item>26</item>
-        <item>30</item>
-        <item>34</item>
-        <item>140</item>
-        <item>310</item>
-        <item>400</item>
+        <item>10</item>
+        <item>50</item>
+        <item>100</item>
+        <item>200</item>
+        <item>400</item>    
         <item>500</item>
-        <item>600</item>
+        <item>800</item>
         <item>1000</item>
-        <item>1200</item>
-        <item>1500</item>
+        <item>1600</item>   
         <item>3000</item>
-        <item>3500</item>
-        <item>4000</item>
+        <item>10000</item>
     </integer-array>
 
     <!-- Array of output values for LCD backlight corresponding to the LUX values
@@ -70,31 +57,19 @@
          The brightness values must be between 0 and 255 and be non-decreasing.
          This must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>8</item>
-        <item>13</item>
-        <item>17</item>
-        <item>21</item>
-        <item>26</item>
-        <item>30</item>
-        <item>34</item>
-        <item>140</item>
-        <item>310</item>
-        <item>400</item>
-        <item>500</item>
-        <item>600</item>
-        <item>1000</item>
-        <item>1200</item>
-        <item>1500</item>
-        <item>3000</item>
-        <item>3500</item>
-        <item>4000</item>
-	</integer-array>
+        <item>18</item>
+        <item>28</item>
+        <item>37</item>
+        <item>51</item>
+        <item>71</item>
+        <item>80</item>
+        <item>96</item>
+        <item>108</item>
+        <item>144</item>
+        <item>181</item>
+        <item>254</item>
+        <item>255</item>
+    </integer-array>
 
     <!-- Minimum screen brightness setting allowed by the power manager.
          The user is forbidden from setting the brightness below this level. -->
@@ -151,9 +126,10 @@
     <!-- An Array of "[ConnectivityManager connectionType],
                       [# simultaneous connection types]"  -->
     <string-array translatable="false" name="radioAttributes">
-        <item>"1,1"</item>
-        <item>"0,1"</item>
-        <item>"7,1"</item>
+        <item>1,1</item>
+        <item>0,1</item>
+        <item>7,1</item>
+        <item>9,1</item>
     </string-array>
 
     <!-- List of regexpressions describing the interface (if any) that represent tetherable
@@ -168,7 +144,6 @@
          Wifi interfaces.  If the device doesn't want to support tethering over Wifi this
          should be empty.  An example would be "softap.*" -->
     <string-array translatable="false" name="config_tether_wifi_regexs">
-	    <item>wigig0</item>
         <item>wlan0</item>
     </string-array>
 
@@ -309,7 +284,7 @@
     <string name="config_fusedLocationProviderPackageName" translatable="false">com.qualcomm.location</string>
 
     <!-- Boolean indicating whether the wifi chipset has dual frequency band support -->
-    <bool translatable="false" name="config_wifi_dual_band_support">false</bool>
+    <bool translatable="false" name="config_wifi_dual_band_support">true</bool>
 
     <!-- Flag specifying whether WFC over IMS is available on device -->
     <bool name="config_device_wfc_ims_available">true</bool>
@@ -331,31 +306,21 @@
     <bool name="config_setColorTransformAccelerated">true</bool>
 
     <!-- Default list of files pinned by the Pinner Service -->
-    <string-array name="config_defaultPinnerServiceFiles">
-        <item>/data/dalvik-cache/arm64/system@framework@boot.oat</item>
-        <item>/data/dalvik-cache/arm/system@framework@boot.oat</item>
-        <item>/data/dalvik-cache/arm64/system@framework@services.jar@classes.dex</item>
-        <item>/data/dalvik-cache/arm/system@framework@services.jar@classes.dex</item>
-        <item>/system/framework/arm64/boot.oat</item>
-        <item>/system/framework/arm/boot.oat</item>
-        <item>/system/framework/oat/arm64/services.odex</item>
-        <item>/system/framework/oat/arm/services.odex</item>
-        <item>/system/framework/arm64/boot-framework.oat</item>
-        <item>/system/framework/arm/boot-framework.oat</item>
-        <item>/system/framework/arm64/boot-core-libart.oat</item>
-        <item>/system/framework/arm/boot-core-libart.oat</item>
-        <item>/system/lib64/libRScpp.so</item>
-        <item>/system/lib64/libRS.so</item>
-        <item>/system/lib64/libRS_internal.so</item>
-        <item>/system/lib64/libbcinfo.so</item>
-        <item>/system/lib64/libRSDriver.so</item>
-        <item>/system/lib64/libRSCpuRef.so</item>
-        <item>/system/lib64/libblas.so</item>
+    <string-array translatable="false" name="config_defaultPinnerServiceFiles">
+        <item>"/system/framework/arm64/boot-framework.oat"</item>
+        <item>"/system/framework/arm64/boot-framework.vdex"</item>
+        <item>"/system/framework/oat/arm64/services.odex"</item>
+        <item>"/system/framework/oat/arm64/services.vdex"</item>
+        <item>"/system/framework/arm64/boot.oat"</item>
+        <item>"/system/framework/arm64/boot.vdex"</item>
+        <item>"/system/framework/arm64/boot-core-libart.oat"</item>
+        <item>"/system/framework/arm64/boot-core-libart.vdex"</item>
     </string-array>
-	
-	<!-- Rounded display corners-->
-    <dimen name="rounded_corner_radius">8dp</dimen>
 
     <!-- Should the pinner service pin the Camera application? -->
     <bool name="config_pinnerCameraApp">true</bool>
+
+    <!-- Whether a software navigation bar should be shown. NOTE: in the future this may be
+	     autodetected from the Configuration. -->
+	<bool name="config_showNavigationBar">true</bool>
 </resources>

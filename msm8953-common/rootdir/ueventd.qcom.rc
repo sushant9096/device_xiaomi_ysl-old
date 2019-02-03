@@ -48,7 +48,6 @@
 /dev/ipaNatTable          0660   radio      radio
 /dev/rmnet_ctrl           0660   usb        usb
 /dev/dpl_ctrl             0660   usb        usb
-/dev/spidev5.1            0660  system 	    system
 
 #permissions for CSVT
 /dev/smd11                0660   radio      radio
@@ -150,7 +149,6 @@
 /dev/msm_vidc_dec_sec     0660   system     audio
 /dev/msm_vidc_enc         0660   system     audio
 /dev/msm_rotator          0660   system     system
-/dev/hw_random            0600   root       root
 /dev/sdsprpc-smd          0660   system     system
 
 #permissions for audio
@@ -234,12 +232,6 @@
 /sys/devices/soc/c179000.i2c/i2c-5/5-0020/input/input*    secure_touch         0440   system  drmrpc
 /sys/devices/soc/c179000.i2c/i2c-5/5-0020/input/input*    secure_touch_enable  0660   system  drmrpc
 
-# fpc fingerprint
-/sys/devices/soc/soc:fpc1020*	hw_reset 0660 system system
-/sys/devices/soc/soc:fpc1020*	irq 0660 system system
-/sys/devices/soc/soc:fpc1020*	wakeup_enable 0660 system system
-/sys/devices/soc/soc:fpc1020*    fingerdown_wait 0220 system system
-
 # laser sensor access
 /sys/devices/virtual/input/input*                   enable_ps_sensor 0660  system   input
 /sys/devices/virtual/input/input*                   set_delay_ms     0660  system   input
@@ -254,19 +246,6 @@
 /dev/wcnss_ctrl           0660   system     system
 /sys/devices/soc/600000.qcom,pcie/pci0000:00/0000:00:00.0/0000:01:00.0/net/wlan0/queues/rx-* rps_cpus 0660 system system
 /sys/devices/soc/600000.qcom,pcie/pci0000:00/0000:00:00.0/0000:01:00.0/net/p2p0/queues/rx-* rps_cpus 0660 system system
-
-# wigig
-/sys/bus/pci/drivers/wil6210* 0000:01:00.0/wil6210/fst_link_loss 0660 wifi wifi
-/sys/bus/pci/drivers/wil6210* 0000:01:00.0/wil6210/thermal_throttling 0660 system system
-/sys/bus/pci/drivers/wil6210* 0000:01:00.0/wil6210/snr_thresh 0660 wifi wifi
-/sys/bus/pci/drivers/wil6210* 0000:01:00.0/net/wigig0/queues/rx-0/rps_cpus 0660 system system
-/sys/bus/pci/drivers/wil6210* 0000:01:00.0/net/wigig0/gro_flush_timeout 0660 system system
-/sys/devices/virtual/net/bond0 queues/rx-0/rps_cpus 0660 system system
-
-#nfc permissions
-/dev/nfc-nci              0660    nfc         nfc
-/dev/nq-nci               0660    nfc         nfc
-/dev/assd                 0660    nfc         nfc
 
 # UIO devices
 /dev/uio0                 0660   system     system
@@ -293,9 +272,10 @@
 /dev/block/platform/soc/7824900.sdhci/by-name/config    0600   system     system
 /dev/block/platform/soc/7464900.sdhci/by-name/frp       0600   system     system
 /dev/block/platform/soc/624000.ufshc/by-name/frp        0600   system     system
-/dev/block/platform/soc/1da4000.ufshc/by-name/frp       0600   system     system
-/dev/block/platform/soc/c0c4000.sdhci/by-name/frp       0600   system     system
-/dev/block/platform/soc/1d84000.ufshc/by-name/frp       0600   system     system
 
 # Kmsg device
-/dev/kmsg                                               0620   root       system
+/dev/kmsg                                               0620   root       system 
+
+# lirc
+/dev/lirc0                0660   system     system
+/dev/peel_ir              0660   system     system
