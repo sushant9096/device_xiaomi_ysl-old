@@ -28,15 +28,15 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info.xml \
     $(LOCAL_PATH)/audio/mixer_paths_mtp.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_mtp.xml
 
-# Consumerir
+# Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.ir@1.0-impl \
-    android.hardware.ir@1.0-service
+    android.hardware.biometrics.fingerprint@2.1-service.xiaomi_ysl
+#PRODUCT_COPY_FILES += \
+#    $(LOCAL_PATH)/biometrics/android.hardware.biometrics.fingerprint@2.1-service.xiaomi_ysl.rc:$(TARGET_COPY_OUT_VENDOR)//etc/init/android.hardware.biometrics.fingerprint@2.1-service.xiaomi_ysl.rc
 	
 # Ramdisk
 PRODUCT_PACKAGES += \
-    init.ysl.rc \
-    init.goodix.sh
+    init.ysl.rc
 
 # Sensors
 PRODUCT_COPY_FILES += \
@@ -45,7 +45,3 @@ PRODUCT_COPY_FILES += \
 #PRODUCT_COPY_FILES += \
 #    prebuilts/vndk/v27/arm/arch-arm-armv7-a-neon/shared/vndk-core/android.frameworks.sensorservice@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/android.frameworks.sensorservice@1.0-v27.so \
 #    prebuilts/vndk/v27/arm64/arch-arm64-armv8-a/shared/vndk-core/android.frameworks.sensorservice@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/android.frameworks.sensorservice@1.0-v27.so
-
-# Fingerprint
-PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.xiaomi_ysl
