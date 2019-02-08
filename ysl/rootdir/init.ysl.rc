@@ -47,13 +47,13 @@ on boot
 
 # DT2W
 on property:dt2w.enabled=1
-    write /sys/devices/soc/78b7000.i2c/i2c-3/3-0038/input/input2/device/fts_gesture_mode On
+    write /proc/gesture/onoff 1
 	
 on property:dt2w.enabled=0
-    write /sys/devices/soc/78b7000.i2c/i2c-3/3-0038/input/input2/device/fts_gesture_mode Off	
+    write /proc/gesture/onoff 0	
 
     chmod 0660 /proc/gesture/onoff
-    chown system system /sys/devices/soc/78b7000.i2c/i2c-3/3-0038/input/input2/device/fts_gesture_mode
+    chown system system /proc/gesture/onoff
 
 # fingerprint-goodix
 service goodix_script /vendor/bin/init.goodix.sh
@@ -64,7 +64,7 @@ service goodix_script /vendor/bin/init.goodix.sh
 on property:sys.fp.vendor=goodix
    setprop ro.boot.fpsensor goodix
    setprop persist.sys.fp.vendor goodix
-   
+
 on post-fs-data
 
     # IR nodes
